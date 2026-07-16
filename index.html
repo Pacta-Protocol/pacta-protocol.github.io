@@ -72,7 +72,7 @@
         <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
       </div>
       <a class="btn btn-primary" href="https://app.pactaprotocol.org/" target="_blank" rel="noopener">
-        <span lang="en">Launch App</span><span lang="es">Abrir App</span>
+        <span lang="en">Try Pacta</span><span lang="es">Prueba Pacta</span>
       </a>
     </div>
   </div>
@@ -90,7 +90,7 @@
       <p class="lede" lang="es">Tu IA puede planear lo que sea - pero no puede firmar, tramitar ni construir. Pacta Protocol le permite contratar negocios reales, con licencia y colateral en garantía, y pagar solo por trabajo verificado contra registros oficiales.</p>
       <div class="hero-cta">
         <a class="btn btn-primary btn-lg" href="https://app.pactaprotocol.org/" target="_blank" rel="noopener">
-          <span lang="en">Launch App</span><span lang="es">Abrir App</span>
+          <span lang="en">Try Pacta</span><span lang="es">Prueba Pacta</span>
         </a>
         <a class="btn btn-ghost btn-lg" href="#agents">
           <span lang="en">For agents (MCP)</span><span lang="es">Para agentes (MCP)</span>
@@ -372,10 +372,17 @@ npm run start:pacta
     <h2 lang="es">Preguntas justas.</h2>
     <div class="faq-list" style="margin-left:auto; margin-right:auto; text-align:left">
       <details class="faq">
-        <summary><span lang="en">Is this a real product?</span><span lang="es">¿Esto es un producto real?</span></summary>
+        <summary><span lang="en">How does escrow protect me?</span><span lang="es">¿Cómo me protege la garantía?</span></summary>
         <div class="a">
-          <p lang="en">It's a working proof of concept. The demo data (the firms, the money) is fictional; the mechanics - ledger, escrow, staking, slashing, registry verification, the MCP server - are fully implemented and tested (17 API tests, 11 end-to-end tests, an independently audited agent purchase).</p>
-          <p lang="es">Es una prueba de concepto funcional. Los datos del demo (las firmas, el dinero) son ficticios; la mecánica - libro contable, custodia, garantías, penalizaciones, verificación registral, el servidor MCP - está completamente implementada y probada (17 tests de API, 11 tests end-to-end, y una compra de agente auditada de forma independiente).</p>
+          <p lang="en">When an engagement is funded, the buyer's money moves into an escrow account that belongs to that single engagement - the provider can't touch it, and the buyer can't quietly pull it back. It's released only when the buyer accepts the proof, or redirected by an arbiter's ruling. Every cent lives on a double-entry, integer-cents ledger, so money can never appear or vanish.</p>
+          <p lang="es">Cuando un engagement se financia, el dinero del comprador entra a una cuenta de garantía que pertenece solo a ese engagement - el proveedor no puede tocarla y el comprador no puede retirarla en silencio. Se libera únicamente cuando el comprador acepta la prueba, o se redirige por el fallo de un árbitro. Cada centavo vive en un libro de partida doble en centavos enteros, así que el dinero nunca puede aparecer ni desaparecer.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary><span lang="en">What makes a provider "vetted"?</span><span lang="es">¿Qué hace que un proveedor esté "verificado"?</span></summary>
+        <div class="a">
+          <p lang="en">Collateral, not review. A provider becomes vetted by staking real money against its own performance - the badge means "vetted" exactly while its stake balance is above zero. Nobody on a verification team ever signs off. The moment a provider's stake reaches $0, it loses the badge automatically.</p>
+          <p lang="es">Colateral, no revisión. Un proveedor se vuelve verificado poniendo dinero real como garantía de su propio desempeño - la insignia significa "verificado" exactamente mientras su colateral sea mayor que cero. Nadie en un equipo de verificación firma nada. En el momento en que el colateral de un proveedor llega a $0, pierde la insignia automáticamente.</p>
         </div>
       </details>
       <details class="faq">
@@ -386,10 +393,10 @@ npm run start:pacta
         </div>
       </details>
       <details class="faq">
-        <summary><span lang="en">Can my AI agent really use this on its own?</span><span lang="es">¿De verdad mi agente de IA puede usar esto solo?</span></summary>
+        <summary><span lang="en">Why would a provider ever stake money?</span><span lang="es">¿Por qué un proveedor pondría dinero como garantía?</span></summary>
         <div class="a">
-          <p lang="en">Yes. Pacta is MCP-first: 12 tools cover the whole lifecycle. In our recorded demo a Claude agent searched, contracted, escrowed, waited for delivery, verified 4 registry references independently, paid $5,000, and rated the provider - with an 8/8 independent audit at the end.</p>
-          <p lang="es">Sí. Pacta es MCP primero: 12 herramientas cubren todo el ciclo. En nuestro demo grabado, un agente Claude buscó, contrató, fondeó la custodia, esperó la entrega, verificó 4 referencias registrales por su cuenta, pagó $5,000 y calificó al proveedor - con una auditoría independiente de 8/8 al final.</p>
+          <p lang="en">For access to agentic demand. Agents preferentially hire vetted providers, and the stake is what unlocks that market - it's a credit line of trust, not a fee. The larger the stake, the more open work the provider is allowed to hold at once, so staking is how a business grows the ceiling on what it can earn. Honesty keeps the stake; the only way to lose it is to lose a dispute.</p>
+          <p lang="es">Por acceso a la demanda agéntica. Los agentes contratan de preferencia a proveedores verificados, y el colateral es lo que abre ese mercado - es una línea de crédito de confianza, no una comisión. Cuanto mayor es el colateral, más trabajo abierto puede sostener el proveedor a la vez, así que poner colateral es cómo un negocio sube el techo de lo que puede ganar. La honestidad conserva el colateral; la única forma de perderlo es perder una disputa.</p>
         </div>
       </details>
       <details class="faq">
@@ -397,6 +404,34 @@ npm run start:pacta
         <div class="a">
           <p lang="en">A provider's open work is capped relative to the collateral it has staked and the volume it has already proven - checked every time a contract is agreed. In practice a provider can never hold more open value than it would hurt to lose, so the ceiling grows only by risking more capital or by building a settled track record.</p>
           <p lang="es">El trabajo abierto de un proveedor se limita según el colateral que ha puesto y el volumen que ya ha probado - revisado cada vez que se acuerda un contrato. En la práctica un proveedor nunca puede sostener más valor abierto del que le dolería perder, así que el techo crece solo arriesgando más capital o construyendo un historial liquidado.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary><span lang="en">How is work proven?</span><span lang="es">¿Cómo se prueba el trabajo?</span></summary>
+        <div class="a">
+          <p lang="en">Fulfillment steps can require registry-anchored proof - a reference into an official public registry, such as a company registry, municipal permits, or the tax authority. The platform checks that the record exists and that its kind matches what the step asked for. Because the anchor points at a public record, the buying agent can - and should - re-verify it independently before releasing payment.</p>
+          <p lang="es">Los pasos de cumplimiento pueden exigir prueba anclada a un registro - una referencia a un registro público oficial, como el registro de empresas, permisos municipales o la autoridad tributaria. La plataforma comprueba que el registro existe y que su tipo coincide con lo que pidió el paso. Como el ancla apunta a un registro público, el agente comprador puede - y debe - reverificarlo de forma independiente antes de liberar el pago.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary><span lang="en">Can my AI agent really use this on its own?</span><span lang="es">¿De verdad mi agente de IA puede usar esto solo?</span></summary>
+        <div class="a">
+          <p lang="en">Yes. Pacta is MCP-first: 12 tools cover the whole lifecycle. In our recorded demo a Claude agent searched, contracted, escrowed, waited for delivery, verified 4 registry references independently, paid $5,000, and rated the provider - with an 8/8 independent audit at the end.</p>
+          <p lang="es">Sí. Pacta es MCP primero: 12 herramientas cubren todo el ciclo. En nuestro demo grabado, un agente Claude buscó, contrató, fondeó la custodia, esperó la entrega, verificó 4 referencias registrales por su cuenta, pagó $5,000 y calificó al proveedor - con una auditoría independiente de 8/8 al final.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary><span lang="en">What happens in a dispute?</span><span lang="es">¿Qué pasa en una disputa?</span></summary>
+        <div class="a">
+          <p lang="en">A disputed engagement goes to a neutral arbiter, who reviews the delivery and the proof and issues one of three rulings: release (the provider is paid in full), refund (the buyer is made whole), or split (a middle outcome). The ruling both settles the escrow and decides the slash - the losing provider risks its stake, which is exactly why neither side escalates lightly.</p>
+          <p lang="es">Un engagement en disputa pasa a un árbitro neutral, que revisa la entrega y la prueba y emite uno de tres fallos: liberación (se le paga al proveedor por completo), reembolso (se le restituye al comprador) o división (un resultado intermedio). El fallo liquida la garantía y decide el recorte - el proveedor que pierde arriesga su colateral, que es justo por lo que ninguna de las partes escala a la ligera.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary><span lang="en">Do humans use it too?</span><span lang="es">¿Los humanos también lo usan?</span></summary>
+        <div class="a">
+          <p lang="en">Yes. The web dashboard lets a person step into any of the three roles - agent, SMB, or arbiter - and drive an engagement by hand. Agents connect programmatically over MCP; humans do the same work through the same server, just with a UI instead of tool calls.</p>
+          <p lang="es">Sí. El panel web permite que una persona asuma cualquiera de los tres roles - agente, negocio o árbitro - y opere un engagement a mano. Los agentes se conectan de forma programática por MCP; los humanos hacen el mismo trabajo a través del mismo servidor, solo que con una interfaz en lugar de llamadas a herramientas.</p>
         </div>
       </details>
     </div>
@@ -416,7 +451,7 @@ npm run start:pacta
     <h2 lang="es">Pactos que se cumplen por diseño.<br>Ahora es infraestructura.</h2>
     <div class="cta-row">
       <a class="btn btn-primary btn-lg" href="https://app.pactaprotocol.org/" target="_blank" rel="noopener">
-        <span lang="en">Launch App</span><span lang="es">Abrir App</span>
+        <span lang="en">Try Pacta</span><span lang="es">Prueba Pacta</span>
       </a>
       <a class="btn btn-ghost btn-lg" href="/docs/index.html">
         <span lang="en">Read the docs</span><span lang="es">Leer la documentación</span>
@@ -443,7 +478,7 @@ npm run start:pacta
     </div>
     <div>
       <h4 lang="en">Product</h4><h4 lang="es">Producto</h4>
-      <a href="https://app.pactaprotocol.org/" target="_blank" rel="noopener"><span lang="en">Launch App</span><span lang="es">Abrir App</span></a>
+      <a href="https://app.pactaprotocol.org/" target="_blank" rel="noopener"><span lang="en">Try Pacta</span><span lang="es">Prueba Pacta</span></a>
       <a href="#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
       <a href="#registry"><span lang="en">Service registry</span><span lang="es">Registro de servicios</span></a>
     </div>
