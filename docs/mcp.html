@@ -3,34 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MCP Integration — Pacta Docs</title>
+  <title>MCP Integration - Pacta Protocol Docs</title>
+  <meta name="description" content="Connect any MCP-capable AI agent to Pacta Protocol. Twelve Model Context Protocol tools cover the full lifecycle: discover, contract, fund escrow, verify registry proofs, settle, and rate.">
+  <link rel="canonical" href="https://pactaprotocol.org/docs/mcp.html">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pactaprotocol.org/" },
+      { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://pactaprotocol.org/docs/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "MCP integration", "item": "https://pactaprotocol.org/docs/mcp.html" }
+    ]
+  }
+  </script>
 </head>
 <body data-lang="en">
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="/index.html">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pacta seal">
-        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
-        <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
-        <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+    <a class="brand" href="/index.html" aria-label="Pacta Protocol">
+      <svg viewBox="0 0 100 106" fill="none" stroke="currentColor" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="round" aria-hidden="true">
+        <path d="M31.5 21 V12 Q31.5 6 37.5 6 H86.5 Q92.5 6 92.5 12 V51 Q92.5 57 86.5 57 H77"/>
+        <path d="M58 57 H37.5 Q31.5 57 31.5 51 V33"/>
+        <path d="M11.5 27 H60.5 Q66.5 27 66.5 33 V72 Q66.5 78 60.5 78 H11.5 Q5.5 78 5.5 72 V33 Q5.5 27 11.5 27 Z"/>
+        <path d="M5.5 76 V102"/>
       </svg>
-      <span class="brand-word">PACTA</span>
+      <span class="brand-word">Pacta<span class="sub">&nbsp;Protocol</span></span>
     </a>
     <nav class="nav-links">
       <a href="/index.html#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
-      <a href="/index.html#smbs"><span lang="en">For businesses</span><span lang="es">Para negocios</span></a>
-      <a href="/index.html#agents"><span lang="en">For agents</span><span lang="es">Para agentes</span></a>
-      <a href="/docs/index.html" aria-current="page">Docs</a>
+      <a href="/index.html#agents"><span lang="en">For agents (MCP)</span><span lang="es">Para agentes (MCP)</span></a>
+      <a href="/docs/index.html">Docs</a>
       <a href="/docs/faq.html">FAQ</a>
     </nav>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
-      <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="btn btn-primary" href="https://app.pactaprotocol.org/" target="_blank" rel="noopener"><span lang="en">Launch App</span><span lang="es">Abrir App</span></a>
     </div>
-    <a class="btn btn-gold" href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Open the app</span><span lang="es">Abrir la app</span></a>
   </div>
 </header>
 
@@ -45,11 +63,12 @@
   </aside>
 
   <main class="docs-content">
+    <p class="crumbs"><a href="/index.html"><span lang="en">Home</span><span lang="es">Inicio</span></a><span>/</span><a href="/docs/index.html">Docs</a><span>/</span><span lang="en">MCP integration</span><span lang="es">Integración MCP</span></p>
     <p class="eyebrow"><span lang="en">Model Context Protocol</span><span lang="es">Model Context Protocol</span></p>
     <h1 lang="en">MCP Integration</h1>
     <h1 lang="es">Integración MCP</h1>
-    <p class="lede" lang="en">Pacta ships a Model Context Protocol server so any MCP-capable agent — Claude, or any other MCP client — can transact on the marketplace with 12 tools: discover services, contract, fund escrow, verify registry proofs, release payment, and rate the provider.</p>
-    <p class="lede" lang="es">Pacta incluye un servidor Model Context Protocol para que cualquier agente compatible con MCP — Claude, o cualquier otro cliente MCP — pueda operar en el marketplace con 12 herramientas: descubrir servicios, contratar, depositar en garantía, verificar pruebas del registro, liberar el pago y calificar al proveedor.</p>
+    <p class="lede" lang="en">Pacta ships a Model Context Protocol server so any MCP-capable agent - Claude, or any other MCP client - can transact on the marketplace with 12 tools: discover services, contract, fund escrow, verify registry proofs, release payment, and rate the provider.</p>
+    <p class="lede" lang="es">Pacta incluye un servidor Model Context Protocol para que cualquier agente compatible con MCP - Claude, o cualquier otro cliente MCP - pueda operar en el marketplace con 12 herramientas: descubrir servicios, contratar, depositar en garantía, verificar pruebas del registro, liberar el pago y calificar al proveedor.</p>
 
     <h2 lang="en">Quick start</h2>
     <h2 lang="es">Inicio rápido</h2>
@@ -60,8 +79,8 @@
     <p lang="es">Luego ejecuta el servidor MCP sobre stdio. Dos variables de entorno lo configuran: <code>MARKETPLACE_URL</code> y <code>AGENT_ID</code>.</p>
 <pre><code>MARKETPLACE_URL=<span class="g">http://localhost:3220</span> AGENT_ID=<span class="g">1</span> node mcp/server.js</code></pre>
     <div class="note">
-      <p lang="en" style="margin:0"><code>MARKETPLACE_URL</code> defaults to <code>http://localhost:3000</code> in the source — set it to your marketplace URL (for the Pacta server above, <code>http://localhost:3220</code>). <code>AGENT_ID</code> defaults to <code>1</code>; it identifies the buying agent whose balance funds escrow.</p>
-      <p lang="es" style="margin:0"><code>MARKETPLACE_URL</code> tiene por defecto <code>http://localhost:3000</code> en el código — ajústalo a la URL de tu marketplace (para el servidor Pacta de arriba, <code>http://localhost:3220</code>). <code>AGENT_ID</code> tiene por defecto <code>1</code>; identifica al agente comprador cuyo saldo fondea la custodia.</p>
+      <p lang="en" style="margin:0"><code>MARKETPLACE_URL</code> defaults to <code>http://localhost:3000</code> in the source - set it to your marketplace URL (for the Pacta server above, <code>http://localhost:3220</code>). <code>AGENT_ID</code> defaults to <code>1</code>; it identifies the buying agent whose balance funds escrow.</p>
+      <p lang="es" style="margin:0"><code>MARKETPLACE_URL</code> tiene por defecto <code>http://localhost:3000</code> en el código - ajústalo a la URL de tu marketplace (para el servidor Pacta de arriba, <code>http://localhost:3220</code>). <code>AGENT_ID</code> tiene por defecto <code>1</code>; identifica al agente comprador cuyo saldo fondea la custodia.</p>
     </div>
 
     <h2 lang="en">Connect Claude</h2>
@@ -101,7 +120,7 @@
       <h3>search_offers</h3>
       <p lang="en">Search the marketplace for real-world services offered by vetted SMBs. Results are ranked by provider rating, then price.</p>
       <p lang="es">Busca en el marketplace servicios del mundo real ofrecidos por pymes verificadas. Los resultados se ordenan por calificación del proveedor y luego por precio.</p>
-      <p class="params"><span lang="en">query: string (required) · category: string (optional — legal | tourism | real-estate | accounting)</span><span lang="es">query: string (obligatorio) · category: string (opcional — legal | tourism | real-estate | accounting)</span></p>
+      <p class="params"><span lang="en">query: string (required) · category: string (optional - legal | tourism | real-estate | accounting)</span><span lang="es">query: string (obligatorio) · category: string (opcional - legal | tourism | real-estate | accounting)</span></p>
     </div>
     <div class="tool">
       <h3>get_offer</h3>
@@ -162,8 +181,8 @@
     </div>
     <div class="tool">
       <h3>approve_and_release_payment</h3>
-      <p lang="en">Accept the delivered proofs. Draws the remaining balance from your account and releases the FULL price to the provider. Irreversible — verify the proofs first.</p>
-      <p lang="es">Acepta las pruebas entregadas. Retira el saldo restante de tu cuenta y libera el precio COMPLETO al proveedor. Irreversible — verifica las pruebas primero.</p>
+      <p lang="en">Accept the delivered proofs. Draws the remaining balance from your account and releases the FULL price to the provider. Irreversible - verify the proofs first.</p>
+      <p lang="es">Acepta las pruebas entregadas. Retira el saldo restante de tu cuenta y libera el precio COMPLETO al proveedor. Irreversible - verifica las pruebas primero.</p>
       <p class="params">engagement_id: integer</p>
     </div>
     <div class="tool">
@@ -202,7 +221,7 @@ wait_for_provider_submission({ engagement_id: <span class="g">12</span>, timeout
 verify_registry_reference({ ref: <span class="g">"CR-RN-2026-104512"</span> })   <span class="c"># company registry</span>
 verify_registry_reference({ ref: <span class="g">"CR-MUNI-2026-77310"</span> })   <span class="c"># municipal permit</span>
 
-<span class="c"># 5. Settle — only if all proofs check out</span>
+<span class="c"># 5. Settle - only if all proofs check out</span>
 approve_and_release_payment({ engagement_id: <span class="g">12</span> })  <span class="c"># releases the full price</span>
 rate_provider({ engagement_id: <span class="g">12</span>, value: <span class="g">"good"</span> })</code></pre>
     <div class="note note-wax">
@@ -212,52 +231,73 @@ rate_provider({ engagement_id: <span class="g">12</span>, value: <span class="g"
 
     <h2 lang="en">Errors</h2>
     <h2 lang="es">Errores</h2>
-    <p lang="en">When the marketplace rejects a call, the tool returns an MCP error result (<code>isError</code>) whose text carries the HTTP status and message from the marketplace — for example <code>409</code> when a state transition is illegal (funding an engagement that is not yet agreed), or <code>404</code> for an unknown registry reference. Read the message, correct the request, and retry.</p>
-    <p lang="es">Cuando el marketplace rechaza una llamada, la herramienta devuelve un resultado de error MCP (<code>isError</code>) cuyo texto lleva el estado HTTP y el mensaje del marketplace — por ejemplo <code>409</code> cuando una transición de estado es inválida (financiar un contrato que aún no está acordado), o <code>404</code> para una referencia de registro desconocida. Lee el mensaje, corrige la solicitud y reintenta.</p>
+    <p lang="en">When the marketplace rejects a call, the tool returns an MCP error result (<code>isError</code>) whose text carries the HTTP status and message from the marketplace - for example <code>409</code> when a state transition is illegal (funding an engagement that is not yet agreed), or <code>404</code> for an unknown registry reference. Read the message, correct the request, and retry.</p>
+    <p lang="es">Cuando el marketplace rechaza una llamada, la herramienta devuelve un resultado de error MCP (<code>isError</code>) cuyo texto lleva el estado HTTP y el mensaje del marketplace - por ejemplo <code>409</code> cuando una transición de estado es inválida (financiar un contrato que aún no está acordado), o <code>404</code> para una referencia de registro desconocida. Lee el mensaje, corrige la solicitud y reintenta.</p>
   </main>
 </div>
 
 <footer class="footer">
   <div class="wrap footer-cols">
     <div>
-      <a class="brand" href="/index.html">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
-          <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
-          <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+      <a class="brand" href="/index.html" aria-label="Pacta Protocol">
+        <svg viewBox="0 0 100 106" fill="none" stroke="currentColor" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="round" aria-hidden="true">
+          <path d="M31.5 21 V12 Q31.5 6 37.5 6 H86.5 Q92.5 6 92.5 12 V51 Q92.5 57 86.5 57 H77"/>
+          <path d="M58 57 H37.5 Q31.5 57 31.5 51 V33"/>
+          <path d="M11.5 27 H60.5 Q66.5 27 66.5 33 V72 Q66.5 78 60.5 78 H11.5 Q5.5 78 5.5 72 V33 Q5.5 27 11.5 27 Z"/>
+          <path d="M5.5 76 V102"/>
         </svg>
-        <span class="brand-word">PACTA</span>
+        <span class="wordmark">Pacta<br>Protocol</span>
       </a>
       <p class="tag" lang="en">Agreements that enforce themselves.</p>
       <p class="tag" lang="es">Pactos que se cumplen por diseño.</p>
     </div>
     <div>
       <h4 lang="en">Product</h4><h4 lang="es">Producto</h4>
-      <a href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Marketplace app</span><span lang="es">App del marketplace</span></a>
+      <a href="https://app.pactaprotocol.org/" target="_blank" rel="noopener"><span lang="en">Launch App</span><span lang="es">Abrir App</span></a>
       <a href="/index.html#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
-      <a href="/index.html#offers"><span lang="en">Sample services</span><span lang="es">Servicios de ejemplo</span></a>
+      <a href="/index.html#registry"><span lang="en">Service registry</span><span lang="es">Registro de servicios</span></a>
     </div>
     <div>
-      <h4>Docs</h4>
+      <h4 lang="en">Build</h4><h4 lang="es">Construir</h4>
       <a href="/docs/index.html"><span lang="en">Getting started</span><span lang="es">Primeros pasos</span></a>
       <a href="/docs/mcp.html"><span lang="en">MCP integration</span><span lang="es">Integración MCP</span></a>
       <a href="/docs/faq.html">FAQ</a>
     </div>
     <div>
-      <h4 lang="en">Project</h4><h4 lang="es">Proyecto</h4>
-      <a href="/index.html#agents"><span lang="en">Agent demo</span><span lang="es">Demo del agente</span></a>
-      <a href="/index.html#trust"><span lang="en">Trust mechanics</span><span lang="es">Mecánica de confianza</span></a>
-      <a href="/documents/Pacta-Explainer-EN.pdf" target="_blank" rel="noopener"><span lang="en">Explainer (PDF)</span><span lang="es">Explainer (PDF, EN)</span></a>
-      <a href="/documents/Pacta-Pitch-EN.pdf" target="_blank" rel="noopener"><span lang="en">Pitch (PDF)</span><span lang="es">Pitch (PDF, EN)</span></a>
+      <h4 lang="en">Company</h4><h4 lang="es">Compañía</h4>
+      <a href="mailto:hello@pactaprotocol.org"><span lang="en">Contact</span><span lang="es">Contacto</span></a>
+      <a href="/privacy.html"><span lang="en">Privacy Policy</span><span lang="es">Política de privacidad</span></a>
+      <a href="https://github.com/Pacta-Protocol" target="_blank" rel="noopener">GitHub</a>
+      <a href="/documents/Pacta-Explainer-EN.pdf" target="_blank" rel="noopener"><span lang="en">Explainer (PDF)</span><span lang="es">Explainer (PDF)</span></a>
+      <a href="/documents/Pacta-Pitch-EN.pdf" target="_blank" rel="noopener"><span lang="en">Pitch deck (PDF)</span><span lang="es">Pitch (PDF)</span></a>
     </div>
   </div>
   <div class="wrap footer-base">
-    <span lang="en">Pacta · proof of concept · demo data is fictional, the mechanics are real · <span class="money">Σ balances ≡ Σ minted</span></span>
-    <span lang="es">Pacta · prueba de concepto · los datos del demo son ficticios, la mecánica es real · <span class="money">Σ balances ≡ Σ minted</span></span>
+    <span lang="en">© 2026 Pacta Protocol · Open source under the MIT License</span>
+    <span lang="es">© 2026 Pacta Protocol · Código abierto bajo licencia MIT</span>
   </div>
 </footer>
 
-<script src="/assets/config.js"></script>
-<script src="/assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+  var KEY = 'pacta-lang', saved = 'en';
+  try { saved = localStorage.getItem(KEY) || 'en'; } catch (e) {}
+  if (saved !== 'en' && saved !== 'es') saved = 'en';
+  function apply(lang) {
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  document.addEventListener('click', function (ev) {
+    var btn = ev.target.closest('[data-set-lang]');
+    if (btn) apply(btn.getAttribute('data-set-lang'));
+  });
+  apply(saved);
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+# Pacta Protocol — robots.txt
+# All crawlers, including AI answer engines, are welcome.
+
+User-agent: *
+Allow: /
+
+# Explicitly welcome AI / answer-engine crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://pactaprotocol.org/sitemap.xml

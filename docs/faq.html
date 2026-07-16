@@ -3,34 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FAQ — Pacta Docs</title>
+  <title>FAQ - Pacta Protocol Docs</title>
+  <meta name="description" content="Answers to the common questions about Pacta Protocol: what it is, how escrow protects the money, what makes a provider vetted, and what stops a provider from cheating.">
+  <link rel="canonical" href="https://pactaprotocol.org/docs/faq.html">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pactaprotocol.org/" },
+      { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://pactaprotocol.org/docs/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "FAQ", "item": "https://pactaprotocol.org/docs/faq.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is this a real product?", "acceptedAnswer": { "@type": "Answer", "text": "It is a working proof of concept. The demo data is fictional, but the mechanics underneath are real code: a double-entry ledger, a server-enforced state machine, staking, slashing, and registry verification, all fully implemented and covered by 17 API tests and 11 end-to-end tests." } },
+      { "@type": "Question", "name": "How does escrow protect me?", "acceptedAnswer": { "@type": "Answer", "text": "When an engagement is funded, the buyer's money moves into an escrow account that belongs to that single engagement. The provider cannot touch it and the buyer cannot quietly pull it back. It is released only when the buyer accepts the proof, or redirected by an arbiter's ruling. Every cent lives on a double-entry, integer-cents ledger, so money can never appear or vanish." } },
+      { "@type": "Question", "name": "What makes a provider vetted?", "acceptedAnswer": { "@type": "Answer", "text": "Collateral, not review. A provider becomes vetted by staking real money against its own performance; the badge means vetted exactly while its stake balance is above zero. The moment a provider's stake reaches zero, it loses the badge automatically." } },
+      { "@type": "Question", "name": "What happens if a provider cheats?", "acceptedAnswer": { "@type": "Answer", "text": "If a delivery is disputed and the arbiter rules against the provider, its stake is slashed in the buyer's favor: 20% of the contract price on a full-refund ruling, 10% on a split, and 0% when the provider wins. The slash is always bounded by the remaining stake, and a provider drained to zero loses its vetted status on the spot." } },
+      { "@type": "Question", "name": "Why would a provider ever stake money?", "acceptedAnswer": { "@type": "Answer", "text": "For access to agentic demand. Agents preferentially hire vetted providers, and the stake is what unlocks that market. The larger the stake, the more open work the provider is allowed to hold at once, so staking is how a business grows the ceiling on what it can earn." } },
+      { "@type": "Question", "name": "What is the exposure cap and why does it exist?", "acceptedAnswer": { "@type": "Answer", "text": "It is the ceiling on how much open work a provider can hold at any moment, checked whenever a contract is agreed and sized relative to the collateral it has staked and the volume it has already proven. A provider can never hold more open value than it would hurt to lose, which is what makes cheating structurally unprofitable." } },
+      { "@type": "Question", "name": "How is work proven?", "acceptedAnswer": { "@type": "Answer", "text": "Fulfillment steps can require registry-anchored proof: a reference into an official public registry such as a company registry, municipal permits, or the tax authority. The platform checks that the record exists and that its kind matches what the step asked for, and the buying agent can re-verify it independently before releasing payment." } },
+      { "@type": "Question", "name": "Can my AI agent really use this autonomously?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Agents connect over the Model Context Protocol and drive the whole loop, shop, agree, fund, verify, and release, without a human clicking. In the bundled demo, the Claude-driven agent chose a staked provider over a cheaper one with zero collateral and re-verified four registry references before paying." } },
+      { "@type": "Question", "name": "What happens in a dispute?", "acceptedAnswer": { "@type": "Answer", "text": "A disputed engagement goes to a neutral arbiter, who reviews the delivery and the proof and issues one of three rulings: release, refund, or split. The ruling both settles the escrow and decides the slash, so the losing provider risks its stake." } },
+      { "@type": "Question", "name": "Where does the money live?", "acceptedAnswer": { "@type": "Answer", "text": "On a double-entry ledger inside the platform, denominated in simulated USD and stored as integer cents, so there is no rounding drift. Every movement debits one account and credits another, so the books always balance. The dollars are fictional in this proof of concept; the accounting that governs them is real." } }
+    ]
+  }
+  </script>
 </head>
 <body data-lang="en">
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="/index.html">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pacta seal">
-        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
-        <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
-        <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+    <a class="brand" href="/index.html" aria-label="Pacta Protocol">
+      <svg viewBox="0 0 100 106" fill="none" stroke="currentColor" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="round" aria-hidden="true">
+        <path d="M31.5 21 V12 Q31.5 6 37.5 6 H86.5 Q92.5 6 92.5 12 V51 Q92.5 57 86.5 57 H77"/>
+        <path d="M58 57 H37.5 Q31.5 57 31.5 51 V33"/>
+        <path d="M11.5 27 H60.5 Q66.5 27 66.5 33 V72 Q66.5 78 60.5 78 H11.5 Q5.5 78 5.5 72 V33 Q5.5 27 11.5 27 Z"/>
+        <path d="M5.5 76 V102"/>
       </svg>
-      <span class="brand-word">PACTA</span>
+      <span class="brand-word">Pacta<span class="sub">&nbsp;Protocol</span></span>
     </a>
     <nav class="nav-links">
       <a href="/index.html#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
-      <a href="/index.html#smbs"><span lang="en">For businesses</span><span lang="es">Para negocios</span></a>
-      <a href="/index.html#agents"><span lang="en">For agents</span><span lang="es">Para agentes</span></a>
+      <a href="/index.html#agents"><span lang="en">For agents (MCP)</span><span lang="es">Para agentes (MCP)</span></a>
       <a href="/docs/index.html">Docs</a>
       <a href="/docs/faq.html" aria-current="page">FAQ</a>
     </nav>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
-      <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="btn btn-primary" href="https://app.pactaprotocol.org/" target="_blank" rel="noopener"><span lang="en">Launch App</span><span lang="es">Abrir App</span></a>
     </div>
-    <a class="btn btn-gold" href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Open the app</span><span lang="es">Abrir la app</span></a>
   </div>
 </header>
 
@@ -45,49 +81,50 @@
   </aside>
 
   <main class="docs-content">
+    <p class="crumbs"><a href="/index.html"><span lang="en">Home</span><span lang="es">Inicio</span></a><span>/</span><a href="/docs/index.html">Docs</a><span>/</span>FAQ</p>
     <p class="eyebrow">FAQ</p>
     <h1><span lang="en">Frequently asked questions</span><span lang="es">Preguntas frecuentes</span></h1>
-    <p class="lede" lang="en">The short answers to what people ask first — what Pacta actually is, how the money is protected, and what stops a provider from cheating.</p>
-    <p class="lede" lang="es">Las respuestas cortas a lo que más se pregunta — qué es Pacta en realidad, cómo se protege el dinero y qué impide que un proveedor haga trampa.</p>
+    <p class="lede" lang="en">The short answers to what people ask first - what Pacta actually is, how the money is protected, and what stops a provider from cheating.</p>
+    <p class="lede" lang="es">Las respuestas cortas a lo que más se pregunta - qué es Pacta en realidad, cómo se protege el dinero y qué impide que un proveedor haga trampa.</p>
 
     <div class="faq-list">
 
       <details class="faq" lang="en">
         <summary>Is this a real product?</summary>
         <div class="a">
-          <p>It is a working proof of concept. The demo data — the Costa Rican firms, the money on screen — is fictional. But the mechanics underneath are real code: a double-entry ledger, a server-enforced state machine, staking, slashing, and registry verification, all fully implemented and covered by 17 API tests and 11 end-to-end tests.</p>
+          <p>It is a working proof of concept. The demo data - the Costa Rican firms, the money on screen - is fictional. But the mechanics underneath are real code: a double-entry ledger, a server-enforced state machine, staking, slashing, and registry verification, all fully implemented and covered by 17 API tests and 11 end-to-end tests.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Es un producto real?</summary>
         <div class="a">
-          <p>Es una prueba de concepto funcional. Los datos del demo — las empresas costarricenses, el dinero en pantalla — son ficticios. Pero la mecánica de fondo es código real: un libro de partida doble, una máquina de estados impuesta en el servidor, staking, slashing y verificación de registros, todo implementado y cubierto por 17 pruebas de API y 11 pruebas de extremo a extremo.</p>
+          <p>Es una prueba de concepto funcional. Los datos del demo - las empresas costarricenses, el dinero en pantalla - son ficticios. Pero la mecánica de fondo es código real: un libro de partida doble, una máquina de estados impuesta en el servidor, staking, slashing y verificación de registros, todo implementado y cubierto por 17 pruebas de API y 11 pruebas de extremo a extremo.</p>
         </div>
       </details>
 
       <details class="faq" lang="en">
         <summary>How does escrow protect me?</summary>
         <div class="a">
-          <p>When an engagement is funded, the buyer's money moves into an escrow account that belongs to that single engagement — the provider cannot touch it, and the buyer cannot quietly pull it back. It is released only when the buyer accepts the proof, or redirected by an arbiter's ruling. Every cent lives on a double-entry, integer-cents ledger, and the platform continuously checks the invariant <span class="money">Σ balances ≡ Σ minted</span>, so money can never appear or vanish.</p>
+          <p>When an engagement is funded, the buyer's money moves into an escrow account that belongs to that single engagement - the provider cannot touch it, and the buyer cannot quietly pull it back. It is released only when the buyer accepts the proof, or redirected by an arbiter's ruling. Every cent lives on a double-entry, integer-cents ledger, so money can never appear or vanish.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Cómo me protege la garantía?</summary>
         <div class="a">
-          <p>Cuando un engagement se financia, el dinero del comprador entra a una cuenta de garantía que pertenece solo a ese engagement — el proveedor no puede tocarla y el comprador no puede retirarla en silencio. Se libera únicamente cuando el comprador acepta la prueba, o se redirige por el fallo de un árbitro. Cada centavo vive en un libro de partida doble en centavos enteros, y la plataforma verifica de forma continua la invariante <span class="money">Σ balances ≡ Σ minted</span>, así que el dinero nunca puede aparecer ni desaparecer.</p>
+          <p>Cuando un engagement se financia, el dinero del comprador entra a una cuenta de garantía que pertenece solo a ese engagement - el proveedor no puede tocarla y el comprador no puede retirarla en silencio. Se libera únicamente cuando el comprador acepta la prueba, o se redirige por el fallo de un árbitro. Cada centavo vive en un libro de partida doble en centavos enteros, así que el dinero nunca puede aparecer ni desaparecer.</p>
         </div>
       </details>
 
       <details class="faq" lang="en">
         <summary>What makes a provider "vetted"?</summary>
         <div class="a">
-          <p>Collateral, not review. A provider becomes vetted by staking real money against its own performance — the badge means "vetted" exactly while its stake balance is above zero. Nobody on a verification team ever signs off. The moment a provider's stake reaches <span class="money">$0</span>, it loses the badge automatically.</p>
+          <p>Collateral, not review. A provider becomes vetted by staking real money against its own performance - the badge means "vetted" exactly while its stake balance is above zero. Nobody on a verification team ever signs off. The moment a provider's stake reaches <span class="money">$0</span>, it loses the badge automatically.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Qué hace que un proveedor esté "verificado"?</summary>
         <div class="a">
-          <p>Colateral, no revisión. Un proveedor se vuelve verificado poniendo dinero real como garantía de su propio desempeño — la insignia significa "verificado" exactamente mientras su colateral sea mayor que cero. Nadie en un equipo de verificación firma nada. En el momento en que el colateral de un proveedor llega a <span class="money">$0</span>, pierde la insignia automáticamente.</p>
+          <p>Colateral, no revisión. Un proveedor se vuelve verificado poniendo dinero real como garantía de su propio desempeño - la insignia significa "verificado" exactamente mientras su colateral sea mayor que cero. Nadie en un equipo de verificación firma nada. En el momento en que el colateral de un proveedor llega a <span class="money">$0</span>, pierde la insignia automáticamente.</p>
         </div>
       </details>
 
@@ -107,91 +144,91 @@
       <details class="faq" lang="en">
         <summary>Why would a provider ever stake money?</summary>
         <div class="a">
-          <p>For access to agentic demand. Agents preferentially hire vetted providers, and the stake is what unlocks that market — it is a credit line of trust, not a fee. The larger the stake, the more open work the provider is allowed to hold at once, so staking is how a business grows the ceiling on what it can earn. Honesty keeps the stake; the only way to lose it is to lose a dispute.</p>
+          <p>For access to agentic demand. Agents preferentially hire vetted providers, and the stake is what unlocks that market - it is a credit line of trust, not a fee. The larger the stake, the more open work the provider is allowed to hold at once, so staking is how a business grows the ceiling on what it can earn. Honesty keeps the stake; the only way to lose it is to lose a dispute.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Por qué un proveedor pondría dinero como garantía?</summary>
         <div class="a">
-          <p>Por acceso a la demanda agéntica. Los agentes contratan de preferencia a proveedores verificados, y el colateral es lo que abre ese mercado — es una línea de crédito de confianza, no una comisión. Cuanto mayor es el colateral, más trabajo abierto puede sostener el proveedor a la vez, así que poner colateral es cómo un negocio sube el techo de lo que puede ganar. La honestidad conserva el colateral; la única forma de perderlo es perder una disputa.</p>
+          <p>Por acceso a la demanda agéntica. Los agentes contratan de preferencia a proveedores verificados, y el colateral es lo que abre ese mercado - es una línea de crédito de confianza, no una comisión. Cuanto mayor es el colateral, más trabajo abierto puede sostener el proveedor a la vez, así que poner colateral es cómo un negocio sube el techo de lo que puede ganar. La honestidad conserva el colateral; la única forma de perderlo es perder una disputa.</p>
         </div>
       </details>
 
       <details class="faq" lang="en">
         <summary>What is the exposure cap and why does it exist?</summary>
         <div class="a">
-          <p>It is the ceiling on how much open work a provider can hold at any moment, checked whenever a contract is agreed: <span class="money">exposure ≤ 5 × stake + 50% × proven GMV</span>. The point is simple — a provider can never hold more open value than it would hurt to lose. That is what makes cheating structurally unprofitable: the most it could run off with is always less than the stake it forfeits plus the future earnings it gives up.</p>
+          <p>It is the ceiling on how much open work a provider can hold at any moment, checked whenever a contract is agreed and sized relative to the collateral it has staked and the volume it has already proven. The point is simple - a provider can never hold more open value than it would hurt to lose. That is what makes cheating structurally unprofitable: the most it could run off with is always less than the stake it forfeits plus the future earnings it gives up.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Qué es el tope de exposición y por qué existe?</summary>
         <div class="a">
-          <p>Es el techo de cuánto trabajo abierto puede sostener un proveedor en cualquier momento, revisado cada vez que se acuerda un contrato: <span class="money">exposición ≤ 5 × colateral + 50% × GMV probado</span>. La idea es simple — un proveedor nunca puede sostener más valor abierto del que le dolería perder. Eso es lo que hace que la trampa sea estructuralmente no rentable: lo máximo con lo que podría huir siempre es menor que el colateral que pierde más los ingresos futuros que sacrifica.</p>
+          <p>Es el techo de cuánto trabajo abierto puede sostener un proveedor en cualquier momento, revisado cada vez que se acuerda un contrato y dimensionado según el colateral que ha puesto y el volumen que ya ha probado. La idea es simple - un proveedor nunca puede sostener más valor abierto del que le dolería perder. Eso es lo que hace que la trampa sea estructuralmente no rentable: lo máximo con lo que podría huir siempre es menor que el colateral que pierde más los ingresos futuros que sacrifica.</p>
         </div>
       </details>
 
       <details class="faq" lang="en">
         <summary>How is work proven?</summary>
         <div class="a">
-          <p>Fulfillment steps can require registry-anchored proof — a reference into an official public registry, such as a company registry, municipal permits, or the tax authority (for example <code>CR-RN-2026-104512</code> for an incorporation, or <code>CR-MUNI-SJ-88231</code> for a municipal permit). The platform checks that the record exists and that its kind matches what the step asked for. Because the anchor points at a public record, the buying agent can — and should — re-verify it independently before releasing payment.</p>
+          <p>Fulfillment steps can require registry-anchored proof - a reference into an official public registry, such as a company registry, municipal permits, or the tax authority (for example <code>CR-RN-2026-104512</code> for an incorporation, or <code>CR-MUNI-SJ-88231</code> for a municipal permit). The platform checks that the record exists and that its kind matches what the step asked for. Because the anchor points at a public record, the buying agent can - and should - re-verify it independently before releasing payment.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Cómo se prueba el trabajo?</summary>
         <div class="a">
-          <p>Los pasos de cumplimiento pueden exigir prueba anclada a un registro — una referencia a un registro público oficial, como el registro de empresas, permisos municipales o la autoridad tributaria (por ejemplo <code>CR-RN-2026-104512</code> para una constitución, o <code>CR-MUNI-SJ-88231</code> para un permiso municipal). La plataforma comprueba que el registro existe y que su tipo coincide con lo que pidió el paso. Como el ancla apunta a un registro público, el agente comprador puede — y debe — reverificarlo de forma independiente antes de liberar el pago.</p>
+          <p>Los pasos de cumplimiento pueden exigir prueba anclada a un registro - una referencia a un registro público oficial, como el registro de empresas, permisos municipales o la autoridad tributaria (por ejemplo <code>CR-RN-2026-104512</code> para una constitución, o <code>CR-MUNI-SJ-88231</code> para un permiso municipal). La plataforma comprueba que el registro existe y que su tipo coincide con lo que pidió el paso. Como el ancla apunta a un registro público, el agente comprador puede - y debe - reverificarlo de forma independiente antes de liberar el pago.</p>
         </div>
       </details>
 
       <details class="faq" lang="en">
         <summary>Can my AI agent really use this autonomously?</summary>
         <div class="a">
-          <p>Yes. Agents connect over the Model Context Protocol and drive the whole loop — shop, agree, fund, verify, release — without a human clicking. In the bundled demo, the Claude-driven agent chose a staked provider over a cheaper one with zero collateral, and re-verified four registry references before paying. See <a href="/docs/mcp.html">MCP integration</a> for the tool surface.</p>
+          <p>Yes. Agents connect over the Model Context Protocol and drive the whole loop - shop, agree, fund, verify, release - without a human clicking. In the bundled demo, the Claude-driven agent chose a staked provider over a cheaper one with zero collateral, and re-verified four registry references before paying. See <a href="/docs/mcp.html">MCP integration</a> for the tool surface.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Mi agente de IA puede usar esto de forma autónoma?</summary>
         <div class="a">
-          <p>Sí. Los agentes se conectan por el Model Context Protocol y operan el ciclo completo — comprar, acordar, financiar, verificar, liberar — sin que un humano haga clic. En el demo incluido, el agente conducido por Claude eligió a un proveedor con colateral por encima de uno más barato sin garantía, y reverificó cuatro referencias de registro antes de pagar. Consulta <a href="/docs/mcp.html">Integración MCP</a> para conocer las herramientas.</p>
+          <p>Sí. Los agentes se conectan por el Model Context Protocol y operan el ciclo completo - comprar, acordar, financiar, verificar, liberar - sin que un humano haga clic. En el demo incluido, el agente conducido por Claude eligió a un proveedor con colateral por encima de uno más barato sin garantía, y reverificó cuatro referencias de registro antes de pagar. Consulta <a href="/docs/mcp.html">Integración MCP</a> para conocer las herramientas.</p>
         </div>
       </details>
 
       <details class="faq" lang="en">
         <summary>What happens in a dispute?</summary>
         <div class="a">
-          <p>A disputed engagement goes to a neutral arbiter, who reviews the delivery and the proof and issues one of three rulings: <em>release</em> (the provider is paid in full), <em>refund</em> (the buyer is made whole), or <em>split</em> (a middle outcome). The ruling both settles the escrow and decides the slash — the losing provider risks its stake, which is exactly why neither side escalates lightly.</p>
+          <p>A disputed engagement goes to a neutral arbiter, who reviews the delivery and the proof and issues one of three rulings: <em>release</em> (the provider is paid in full), <em>refund</em> (the buyer is made whole), or <em>split</em> (a middle outcome). The ruling both settles the escrow and decides the slash - the losing provider risks its stake, which is exactly why neither side escalates lightly.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Qué pasa en una disputa?</summary>
         <div class="a">
-          <p>Un engagement en disputa pasa a un árbitro neutral, que revisa la entrega y la prueba y emite uno de tres fallos: <em>liberación</em> (se le paga al proveedor por completo), <em>reembolso</em> (se le restituye al comprador) o <em>división</em> (un resultado intermedio). El fallo liquida la garantía y decide el recorte — el proveedor que pierde arriesga su colateral, que es justo por lo que ninguna de las partes escala a la ligera.</p>
+          <p>Un engagement en disputa pasa a un árbitro neutral, que revisa la entrega y la prueba y emite uno de tres fallos: <em>liberación</em> (se le paga al proveedor por completo), <em>reembolso</em> (se le restituye al comprador) o <em>división</em> (un resultado intermedio). El fallo liquida la garantía y decide el recorte - el proveedor que pierde arriesga su colateral, que es justo por lo que ninguna de las partes escala a la ligera.</p>
         </div>
       </details>
 
       <details class="faq" lang="en">
         <summary>Do humans use it too?</summary>
         <div class="a">
-          <p>Yes. The web dashboard lets a person step into any of the three roles — agent, SMB, or arbiter — and drive an engagement by hand. Agents connect programmatically over MCP; humans do the same work through the same server, just with a UI instead of tool calls.</p>
+          <p>Yes. The web dashboard lets a person step into any of the three roles - agent, SMB, or arbiter - and drive an engagement by hand. Agents connect programmatically over MCP; humans do the same work through the same server, just with a UI instead of tool calls.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Los humanos también lo usan?</summary>
         <div class="a">
-          <p>Sí. El panel web permite que una persona asuma cualquiera de los tres roles — agente, negocio o árbitro — y opere un engagement a mano. Los agentes se conectan de forma programática por MCP; los humanos hacen el mismo trabajo a través del mismo servidor, solo que con una interfaz en lugar de llamadas a herramientas.</p>
+          <p>Sí. El panel web permite que una persona asuma cualquiera de los tres roles - agente, negocio o árbitro - y opere un engagement a mano. Los agentes se conectan de forma programática por MCP; los humanos hacen el mismo trabajo a través del mismo servidor, solo que con una interfaz en lugar de llamadas a herramientas.</p>
         </div>
       </details>
 
       <details class="faq" lang="en">
         <summary>Where does the money live?</summary>
         <div class="a">
-          <p>On a double-entry ledger inside the platform, denominated in simulated USD and stored as integer cents — no floating point, so no rounding drift. Every movement debits one account and credits another, and the platform continuously checks the invariant <span class="money">Σ balances ≡ Σ minted</span>. The dollars are fictional in this proof of concept; the accounting that governs them is real.</p>
+          <p>On a double-entry ledger inside the platform, denominated in simulated USD and stored as integer cents - no floating point, so no rounding drift. Every movement debits one account and credits another, so the books always balance. The dollars are fictional in this proof of concept; the accounting that governs them is real.</p>
         </div>
       </details>
       <details class="faq" lang="es">
         <summary>¿Dónde vive el dinero?</summary>
         <div class="a">
-          <p>En un libro de partida doble dentro de la plataforma, denominado en USD simulados y guardado como centavos enteros — sin punto flotante, así que sin deriva por redondeo. Cada movimiento debita una cuenta y acredita otra, y la plataforma verifica de forma continua la invariante <span class="money">Σ balances ≡ Σ minted</span>. Los dólares son ficticios en esta prueba de concepto; la contabilidad que los gobierna es real.</p>
+          <p>En un libro de partida doble dentro de la plataforma, denominado en USD simulados y guardado como centavos enteros - sin punto flotante, así que sin deriva por redondeo. Cada movimiento debita una cuenta y acredita otra, así que los libros siempre cuadran. Los dólares son ficticios en esta prueba de concepto; la contabilidad que los gobierna es real.</p>
         </div>
       </details>
 
@@ -210,52 +247,73 @@
 
     </div>
 
-    <div class="note" lang="en">Still have questions? Start with <a href="/docs/index.html">Getting started</a> to run Pacta locally, or read the <a href="/docs/mcp.html">MCP integration</a> guide to connect an agent.</div>
-    <div class="note" lang="es">¿Aún tienes preguntas? Empieza por <a href="/docs/index.html">Primeros pasos</a> para correr Pacta localmente, o lee la guía de <a href="/docs/mcp.html">Integración MCP</a> para conectar un agente.</div>
+    <div class="note" lang="en">Still have questions? Start with <a href="/docs/index.html">Getting started</a> to run Pacta locally, or read the <a href="/docs/mcp.html">MCP integration</a> guide to connect an agent. You can also reach us at <a href="mailto:hello@pactaprotocol.org">hello@pactaprotocol.org</a>.</div>
+    <div class="note" lang="es">¿Aún tienes preguntas? Empieza por <a href="/docs/index.html">Primeros pasos</a> para correr Pacta localmente, o lee la guía de <a href="/docs/mcp.html">Integración MCP</a> para conectar un agente. También puedes escribirnos a <a href="mailto:hello@pactaprotocol.org">hello@pactaprotocol.org</a>.</div>
   </main>
 </div>
 
 <footer class="footer">
   <div class="wrap footer-cols">
     <div>
-      <a class="brand" href="/index.html">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
-          <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
-          <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+      <a class="brand" href="/index.html" aria-label="Pacta Protocol">
+        <svg viewBox="0 0 100 106" fill="none" stroke="currentColor" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="round" aria-hidden="true">
+          <path d="M31.5 21 V12 Q31.5 6 37.5 6 H86.5 Q92.5 6 92.5 12 V51 Q92.5 57 86.5 57 H77"/>
+          <path d="M58 57 H37.5 Q31.5 57 31.5 51 V33"/>
+          <path d="M11.5 27 H60.5 Q66.5 27 66.5 33 V72 Q66.5 78 60.5 78 H11.5 Q5.5 78 5.5 72 V33 Q5.5 27 11.5 27 Z"/>
+          <path d="M5.5 76 V102"/>
         </svg>
-        <span class="brand-word">PACTA</span>
+        <span class="wordmark">Pacta<br>Protocol</span>
       </a>
       <p class="tag" lang="en">Agreements that enforce themselves.</p>
       <p class="tag" lang="es">Pactos que se cumplen por diseño.</p>
     </div>
     <div>
       <h4 lang="en">Product</h4><h4 lang="es">Producto</h4>
-      <a href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Marketplace app</span><span lang="es">App del marketplace</span></a>
+      <a href="https://app.pactaprotocol.org/" target="_blank" rel="noopener"><span lang="en">Launch App</span><span lang="es">Abrir App</span></a>
       <a href="/index.html#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
-      <a href="/index.html#offers"><span lang="en">Sample services</span><span lang="es">Servicios de ejemplo</span></a>
+      <a href="/index.html#registry"><span lang="en">Service registry</span><span lang="es">Registro de servicios</span></a>
     </div>
     <div>
-      <h4>Docs</h4>
+      <h4 lang="en">Build</h4><h4 lang="es">Construir</h4>
       <a href="/docs/index.html"><span lang="en">Getting started</span><span lang="es">Primeros pasos</span></a>
       <a href="/docs/mcp.html"><span lang="en">MCP integration</span><span lang="es">Integración MCP</span></a>
       <a href="/docs/faq.html">FAQ</a>
     </div>
     <div>
-      <h4 lang="en">Project</h4><h4 lang="es">Proyecto</h4>
-      <a href="/index.html#agents"><span lang="en">Agent demo</span><span lang="es">Demo del agente</span></a>
-      <a href="/index.html#trust"><span lang="en">Trust mechanics</span><span lang="es">Mecánica de confianza</span></a>
-      <a href="/documents/Pacta-Explainer-EN.pdf" target="_blank" rel="noopener"><span lang="en">Explainer (PDF)</span><span lang="es">Explainer (PDF, EN)</span></a>
-      <a href="/documents/Pacta-Pitch-EN.pdf" target="_blank" rel="noopener"><span lang="en">Pitch (PDF)</span><span lang="es">Pitch (PDF, EN)</span></a>
+      <h4 lang="en">Company</h4><h4 lang="es">Compañía</h4>
+      <a href="mailto:hello@pactaprotocol.org"><span lang="en">Contact</span><span lang="es">Contacto</span></a>
+      <a href="/privacy.html"><span lang="en">Privacy Policy</span><span lang="es">Política de privacidad</span></a>
+      <a href="https://github.com/Pacta-Protocol" target="_blank" rel="noopener">GitHub</a>
+      <a href="/documents/Pacta-Explainer-EN.pdf" target="_blank" rel="noopener"><span lang="en">Explainer (PDF)</span><span lang="es">Explainer (PDF)</span></a>
+      <a href="/documents/Pacta-Pitch-EN.pdf" target="_blank" rel="noopener"><span lang="en">Pitch deck (PDF)</span><span lang="es">Pitch (PDF)</span></a>
     </div>
   </div>
   <div class="wrap footer-base">
-    <span lang="en">Pacta · proof of concept · demo data is fictional, the mechanics are real · <span class="money">Σ balances ≡ Σ minted</span></span>
-    <span lang="es">Pacta · prueba de concepto · los datos del demo son ficticios, la mecánica es real · <span class="money">Σ balances ≡ Σ minted</span></span>
+    <span lang="en">© 2026 Pacta Protocol · Open source under the MIT License</span>
+    <span lang="es">© 2026 Pacta Protocol · Código abierto bajo licencia MIT</span>
   </div>
 </footer>
 
-<script src="/assets/config.js"></script>
-<script src="/assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+  var KEY = 'pacta-lang', saved = 'en';
+  try { saved = localStorage.getItem(KEY) || 'en'; } catch (e) {}
+  if (saved !== 'en' && saved !== 'es') saved = 'en';
+  function apply(lang) {
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  document.addEventListener('click', function (ev) {
+    var btn = ev.target.closest('[data-set-lang]');
+    if (btn) apply(btn.getAttribute('data-set-lang'));
+  });
+  apply(saved);
+})();
+</script>
 </body>
 </html>
