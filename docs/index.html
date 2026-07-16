@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Getting Started — Pacta Docs</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body data-lang="en">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pacta seal">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+      </svg>
+      <span class="brand-word">PACTA</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/index.html#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
+      <a href="/index.html#smbs"><span lang="en">For businesses</span><span lang="es">Para negocios</span></a>
+      <a href="/index.html#agents"><span lang="en">For agents</span><span lang="es">Para agentes</span></a>
+      <a href="/docs/index.html" aria-current="page">Docs</a>
+      <a href="/docs/faq.html">FAQ</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <a class="btn btn-gold" href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Open the app</span><span lang="es">Abrir la app</span></a>
+  </div>
+</header>
+
+<div class="docs-layout">
+  <aside class="docs-side">
+    <p class="kicker"><span lang="en">Documentation</span><span lang="es">Documentación</span></p>
+    <nav>
+      <a href="/docs/index.html" aria-current="page"><span lang="en">Getting started</span><span lang="es">Primeros pasos</span></a>
+      <a href="/docs/mcp.html"><span lang="en">MCP integration</span><span lang="es">Integración MCP</span></a>
+      <a href="/docs/faq.html">FAQ</a>
+    </nav>
+  </aside>
+
+  <main class="docs-content">
+    <p class="eyebrow"><span lang="en">Getting started</span><span lang="es">Primeros pasos</span></p>
+    <h1><span lang="en">Getting started</span><span lang="es">Primeros pasos</span></h1>
+    <p class="lede" lang="en">Pacta is a marketplace where AI agents hire real-world businesses under contracts that enforce themselves — escrow holds the money, providers stake real collateral, and fulfillment is proven against official public registries. This page gets it running on your machine and walks the whole loop end to end.</p>
+    <p class="lede" lang="es">Pacta es un marketplace donde agentes de IA contratan negocios del mundo real bajo pactos que se cumplen por diseño: el depósito en garantía retiene el dinero, los proveedores ponen colateral real y el cumplimiento se prueba contra registros públicos oficiales. Esta página lo pone a correr en tu máquina y recorre el ciclo completo de principio a fin.</p>
+
+    <div class="note" lang="en">This is a working proof of concept. The demo data — the Costa Rican firms, the money — is fictional; the mechanics behind it (the ledger, the state machine, staking, slashing, registry checks) are fully implemented and tested.</div>
+    <div class="note" lang="es">Es una prueba de concepto funcional. Los datos del demo — las empresas costarricenses, el dinero — son ficticios; la mecánica detrás (el libro contable, la máquina de estados, el staking, el slashing, la verificación de registros) está completamente implementada y probada.</div>
+
+    <h2><span lang="en">Requirements</span><span lang="es">Requisitos</span></h2>
+    <p lang="en">You need <strong>Node.js 22.5 or newer</strong> — Pacta uses the built-in <code>node:sqlite</code> module, so there is no database to install. No Docker, no external services, no API keys. The whole thing runs from one repository.</p>
+    <p lang="es">Necesitas <strong>Node.js 22.5 o superior</strong> — Pacta usa el módulo integrado <code>node:sqlite</code>, así que no hay base de datos que instalar. Sin Docker, sin servicios externos, sin llaves de API. Todo corre desde un solo repositorio.</p>
+
+    <h2><span lang="en">Run it locally</span><span lang="es">Córrelo localmente</span></h2>
+    <p lang="en">Install dependencies once, then start the full Pacta server with trust mechanics enabled:</p>
+    <p lang="es">Instala las dependencias una vez y luego arranca el servidor completo de Pacta con la mecánica de confianza activada:</p>
+<pre><code>npm install
+npm run start:pacta   <span class="c"># Pacta with full trust mechanics</span>
+<span class="c"># open http://localhost:3220</span></code></pre>
+    <p lang="en">The <code>start:pacta</code> server is Pacta proper: staking, escrow, slashing, and registry-anchored proof. Two other entry points are handy while you explore:</p>
+    <p lang="es">El servidor <code>start:pacta</code> es Pacta como tal: staking, garantía, slashing y prueba anclada a registros. Hay otros dos puntos de entrada útiles para explorar:</p>
+    <div class="table-scroll">
+      <table class="ref">
+        <thead>
+          <tr>
+            <th><span lang="en">Command</span><span lang="es">Comando</span></th>
+            <th><span lang="en">What it starts</span><span lang="es">Qué arranca</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>npm run start:pacta</td>
+            <td><span lang="en">Pacta with full trust mechanics — <span class="money">http://localhost:3220</span></span><span lang="es">Pacta con la mecánica de confianza completa — <span class="money">http://localhost:3220</span></span></td>
+          </tr>
+          <tr>
+            <td>npm start</td>
+            <td><span lang="en">Baseline marketplace, no staking — <span class="money">http://localhost:3210</span></span><span lang="es">Marketplace base, sin staking — <span class="money">http://localhost:3210</span></span></td>
+          </tr>
+          <tr>
+            <td>npm run start:all</td>
+            <td><span lang="en">Both servers at once, on both ports</span><span lang="es">Ambos servidores a la vez, en ambos puertos</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p lang="en">To confirm the mechanics hold, run the tests: <code>npm test</code> exercises 17 API tests against the ledger and state machine, and <code>npm run test:e2e</code> runs 11 Playwright tests through the dashboard.</p>
+    <p lang="es">Para confirmar que la mecánica se sostiene, corre las pruebas: <code>npm test</code> ejecuta 17 pruebas de API contra el libro contable y la máquina de estados, y <code>npm run test:e2e</code> corre 11 pruebas de Playwright a través del panel.</p>
+
+    <h2><span lang="en">The three roles</span><span lang="es">Los tres roles</span></h2>
+    <p lang="en">Every engagement on Pacta involves three parties. The web dashboard lets one human step into any of them; AI agents connect over MCP instead of clicking.</p>
+    <p lang="es">Cada engagement en Pacta involucra a tres partes. El panel web deja que una persona asuma cualquiera de ellas; los agentes de IA se conectan por MCP en lugar de hacer clic.</p>
+    <div class="grid-3">
+      <div class="card card-accent">
+        <h3><span lang="en">Agent</span><span lang="es">Agente</span></h3>
+        <p lang="en">The buyer. An AI agent (or a human standing in for one) that needs real-world work done, funds the escrow, and verifies the proof before releasing payment.</p>
+        <p lang="es">El comprador. Un agente de IA (o una persona que lo representa) que necesita trabajo del mundo real, financia la garantía y verifica la prueba antes de liberar el pago.</p>
+      </div>
+      <div class="card card-accent">
+        <h3><span lang="en">SMB</span><span lang="es">Negocio</span></h3>
+        <p lang="en">The provider. A small or medium business that stakes collateral to become vetted, accepts contracts, does the work, and submits registry-anchored proof.</p>
+        <p lang="es">El proveedor. Un negocio pequeño o mediano que pone colateral para volverse verificado, acepta contratos, hace el trabajo y presenta prueba anclada a registros.</p>
+      </div>
+      <div class="card card-accent">
+        <h3><span lang="en">Arbiter</span><span lang="es">Árbitro</span></h3>
+        <p lang="en">The neutral. Called only when a delivery is disputed. Rules release, refund, or split — and that ruling is what decides whether a provider's stake gets slashed.</p>
+        <p lang="es">El neutral. Se invoca solo cuando una entrega se disputa. Falla liberación, reembolso o división — y ese fallo es lo que decide si el colateral del proveedor se recorta.</p>
+      </div>
+    </div>
+    <p lang="en">Agents drive Pacta programmatically through the Model Context Protocol. See <a href="/docs/mcp.html">MCP integration</a> for the tool surface.</p>
+    <p lang="es">Los agentes operan Pacta de forma programática mediante el Model Context Protocol. Consulta <a href="/docs/mcp.html">Integración MCP</a> para conocer las herramientas.</p>
+
+    <h2><span lang="en">The lifecycle</span><span lang="es">El ciclo de vida</span></h2>
+    <p lang="en">Every engagement moves through a fixed state machine enforced on the server — no client can skip a step or reorder it. Money only moves at the transitions the state machine allows.</p>
+    <p lang="es">Cada engagement recorre una máquina de estados fija impuesta en el servidor — ningún cliente puede saltarse un paso ni reordenarlo. El dinero solo se mueve en las transiciones que la máquina de estados permite.</p>
+<pre><code>draft <span class="g">→</span> agreed <span class="g">→</span> funded <span class="g">→</span> in_progress <span class="g">→</span> submitted <span class="g">→</span> completed
+                                                        <span class="g">↘</span> disputed <span class="g">→</span> resolved</code></pre>
+    <div class="steps">
+      <div class="step">
+        <h3><span lang="en">draft → agreed</span><span lang="es">draft → agreed</span></h3>
+        <p lang="en">Terms are proposed and both sides accept. This is where the provider's exposure cap is checked — an over-exposed provider cannot agree.</p>
+        <p lang="es">Se proponen los términos y ambas partes aceptan. Aquí se revisa el tope de exposición del proveedor — uno sobreexpuesto no puede aceptar.</p>
+      </div>
+      <div class="step">
+        <h3><span lang="en">funded → in_progress</span><span lang="es">funded → in_progress</span></h3>
+        <p lang="en">The agent moves the price into a per-engagement escrow account. The work begins only against funded escrow.</p>
+        <p lang="es">El agente traslada el precio a una cuenta de garantía propia del engagement. El trabajo empieza solo con la garantía financiada.</p>
+      </div>
+      <div class="step">
+        <h3><span lang="en">submitted → completed</span><span lang="es">submitted → completed</span></h3>
+        <p lang="en">The provider submits proof; the agent verifies it and releases escrow. Payment lands and the volume counts toward proven GMV.</p>
+        <p lang="es">El proveedor presenta la prueba; el agente la verifica y libera la garantía. El pago llega y el volumen cuenta como GMV probado.</p>
+      </div>
+      <div class="step">
+        <h3><span lang="en">disputed → resolved</span><span lang="es">disputed → resolved</span></h3>
+        <p lang="en">If the agent contests delivery, the arbiter rules. Release, refund, or split — and the stake is slashed accordingly.</p>
+        <p lang="es">Si el agente objeta la entrega, el árbitro falla. Liberación, reembolso o división — y el colateral se recorta según corresponda.</p>
+      </div>
+    </div>
+
+    <h2><span lang="en">The trust model</span><span lang="es">El modelo de confianza</span></h2>
+    <p lang="en">Pacta does not verify that a provider is honest. It makes honesty the most profitable strategy and lets self-interest do the work. Three mechanisms carry it:</p>
+    <p lang="es">Pacta no verifica que un proveedor sea honesto. Hace que la honestidad sea la estrategia más rentable y deja que el interés propio haga el trabajo. Tres mecanismos lo sostienen:</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3><span lang="en">Stake</span><span lang="es">Colateral</span></h3>
+        <p lang="en">A provider posts real collateral to publish offers. "Vetted" stops meaning "someone reviewed it" and starts meaning "it has its own money bet on its performance." Vetted holds exactly while stake is above zero.</p>
+        <p lang="es">El proveedor pone colateral real para publicar ofertas. "Verificado" deja de significar "alguien lo revisó" y pasa a significar "tiene su propio dinero apostado a su desempeño". El estatus se mantiene mientras el colateral sea mayor que cero.</p>
+      </div>
+      <div class="card">
+        <h3><span lang="en">Escrow</span><span lang="es">Garantía</span></h3>
+        <p lang="en">The buyer's money moves into a per-engagement escrow account on a double-entry, integer-cents ledger. The platform continuously checks the invariant <span class="money">Σ balances ≡ Σ minted</span>.</p>
+        <p lang="es">El dinero del comprador entra a una cuenta de garantía propia del engagement, sobre un libro de partida doble en centavos enteros. La plataforma verifica de forma continua la invariante <span class="money">Σ balances ≡ Σ minted</span>.</p>
+      </div>
+      <div class="card">
+        <h3><span lang="en">Registry proof</span><span lang="es">Prueba de registro</span></h3>
+        <p lang="en">Fulfillment steps can require a reference into an official public registry. The platform checks the record exists and its kind matches; the buying agent can re-verify independently before paying.</p>
+        <p lang="es">Los pasos de cumplimiento pueden exigir una referencia a un registro público oficial. La plataforma comprueba que el registro existe y que su tipo coincide; el agente comprador puede reverificar de forma independiente antes de pagar.</p>
+      </div>
+    </div>
+    <p lang="en">The stake is not just a deposit — it sizes how much open work a provider is allowed to hold at once. That ceiling is the <strong>exposure cap</strong>, checked whenever a contract is agreed:</p>
+    <p lang="es">El colateral no es solo un depósito — dimensiona cuánto trabajo abierto puede sostener un proveedor a la vez. Ese techo es el <strong>tope de exposición</strong>, revisado cada vez que se acuerda un contrato:</p>
+    <div class="formula">exposure ≤ 5 × stake + 50% × proven GMV</div>
+    <p lang="en">A provider can never hold more open value than it would hurt to lose. Losing a dispute slashes the stake in favor of the agent: <span class="money">20%</span> of the contract price on a full-refund ruling, <span class="money">10%</span> on a split, and <span class="money">0%</span> when the provider wins — always bounded by the remaining stake. A provider whose stake hits <span class="money">$0</span> loses vetted status automatically.</p>
+    <p lang="es">Un proveedor nunca puede sostener más valor abierto del que le dolería perder. Perder una disputa recorta el colateral a favor del agente: <span class="money">20%</span> del precio del contrato si el fallo es reembolso total, <span class="money">10%</span> en una división y <span class="money">0%</span> cuando el proveedor gana — siempre acotado por el colateral restante. Un proveedor cuyo colateral llega a <span class="money">$0</span> pierde el estatus de verificado automáticamente.</p>
+
+    <h2><span lang="en">Try the agent demo</span><span lang="es">Prueba el demo del agente</span></h2>
+    <p lang="en">Two commands run the whole loop autonomously — the agent shops, funds, verifies, and pays without a human in the loop. They are self-contained on port 3230 and start their own server.</p>
+    <p lang="es">Dos comandos corren el ciclo completo de forma autónoma — el agente compra, financia, verifica y paga sin humano en el circuito. Son autocontenidos en el puerto 3230 y arrancan su propio servidor.</p>
+<pre><code>npm run demo:agent          <span class="c"># scripted autonomous agent</span>
+npm run demo:agent:claude   <span class="c"># the same loop, driven by Claude</span></code></pre>
+    <p lang="en">Each run ends with an independent audit of the ledger and state machine — it should report a clean <span class="money">8/8</span>.</p>
+    <p lang="es">Cada corrida termina con una auditoría independiente del libro contable y la máquina de estados — debe reportar un <span class="money">8/8</span> limpio.</p>
+
+    <h2><span lang="en">Next steps</span><span lang="es">Siguientes pasos</span></h2>
+    <div class="grid-2">
+      <div class="card card-accent">
+        <h3><span lang="en">MCP integration</span><span lang="es">Integración MCP</span></h3>
+        <p lang="en">Wire your own AI agent into Pacta over the Model Context Protocol — the tools, the payloads, the verification flow.</p>
+        <p lang="es">Conecta tu propio agente de IA a Pacta sobre el Model Context Protocol — las herramientas, los payloads, el flujo de verificación.</p>
+        <p><a href="/docs/mcp.html"><span lang="en">Read the MCP guide →</span><span lang="es">Leer la guía de MCP →</span></a></p>
+      </div>
+      <div class="card card-accent">
+        <h3>FAQ</h3>
+        <p lang="en">Escrow, slashing numbers, why a provider would ever stake, what happens in a dispute — the short answers to the common questions.</p>
+        <p lang="es">Garantía, cifras de slashing, por qué un proveedor pondría colateral, qué pasa en una disputa — las respuestas cortas a lo que más se pregunta.</p>
+        <p><a href="/docs/faq.html"><span lang="en">Read the FAQ →</span><span lang="es">Leer las preguntas frecuentes →</span></a></p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="wrap footer-cols">
+    <div>
+      <a class="brand" href="/index.html">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+        </svg>
+        <span class="brand-word">PACTA</span>
+      </a>
+      <p class="tag" lang="en">Agreements that enforce themselves.</p>
+      <p class="tag" lang="es">Pactos que se cumplen por diseño.</p>
+    </div>
+    <div>
+      <h4 lang="en">Product</h4><h4 lang="es">Producto</h4>
+      <a href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Marketplace app</span><span lang="es">App del marketplace</span></a>
+      <a href="/index.html#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
+      <a href="/index.html#offers"><span lang="en">Sample services</span><span lang="es">Servicios de ejemplo</span></a>
+    </div>
+    <div>
+      <h4>Docs</h4>
+      <a href="/docs/index.html"><span lang="en">Getting started</span><span lang="es">Primeros pasos</span></a>
+      <a href="/docs/mcp.html"><span lang="en">MCP integration</span><span lang="es">Integración MCP</span></a>
+      <a href="/docs/faq.html">FAQ</a>
+    </div>
+    <div>
+      <h4 lang="en">Project</h4><h4 lang="es">Proyecto</h4>
+      <a href="/index.html#agents"><span lang="en">Agent demo</span><span lang="es">Demo del agente</span></a>
+      <a href="/index.html#trust"><span lang="en">Trust mechanics</span><span lang="es">Mecánica de confianza</span></a>
+      <a href="/documents/Pacta-Explainer-EN.pdf" target="_blank" rel="noopener"><span lang="en">Explainer (PDF)</span><span lang="es">Explainer (PDF, EN)</span></a>
+      <a href="/documents/Pacta-Pitch-EN.pdf" target="_blank" rel="noopener"><span lang="en">Pitch (PDF)</span><span lang="es">Pitch (PDF, EN)</span></a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span lang="en">Pacta · proof of concept · demo data is fictional, the mechanics are real · <span class="money">Σ balances ≡ Σ minted</span></span>
+    <span lang="es">Pacta · prueba de concepto · los datos del demo son ficticios, la mecánica es real · <span class="money">Σ balances ≡ Σ minted</span></span>
+  </div>
+</footer>
+
+<script src="/assets/config.js"></script>
+<script src="/assets/site.js"></script>
+</body>
+</html>

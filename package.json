@@ -1,0 +1,9 @@
+{
+  "name": "pacta-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pacta website (EN/ES) — the trust layer of agentic commerce",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

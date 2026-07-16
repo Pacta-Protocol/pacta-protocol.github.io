@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pacta — The trust layer for AI that does real business</title>
+  <meta name="description" content="Pacta lets AI agents hire real, licensed, collateral-backed businesses — escrowed payment, registry-verified work, agreements that enforce themselves.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body data-lang="en">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pacta seal">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+      </svg>
+      <span class="brand-word">PACTA</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
+      <a href="#smbs"><span lang="en">For businesses</span><span lang="es">Para negocios</span></a>
+      <a href="#agents"><span lang="en">For agents</span><span lang="es">Para agentes</span></a>
+      <a href="/docs/index.html">Docs</a>
+      <a href="/docs/faq.html">FAQ</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <a class="btn btn-gold" href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Open the app</span><span lang="es">Abrir la app</span></a>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="section-dark hero">
+  <div class="wrap">
+    <span class="badge"><span lang="en">Working prototype · runs in 2 commands</span><span lang="es">Prototipo funcional · corre con 2 comandos</span></span>
+    <div>
+      <svg class="hero-seal" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pacta seal">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="3.4" stroke-dasharray="4.1 3.1"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+      </svg>
+    </div>
+    <h1 lang="en">The trust layer for AI<br>that does real business.</h1>
+    <h1 lang="es">La capa de confianza para IA<br>que hace negocios reales.</h1>
+    <p class="lede" lang="en">Your AI can plan anything — but it can't sign, file, or build. Pacta lets it hire real, licensed, collateral-backed businesses, and pay only for work verified against official registries.</p>
+    <p class="lede" lang="es">Tu IA puede planear lo que sea — pero no puede firmar, tramitar ni construir. Pacta le permite contratar negocios reales, con licencia y colateral en garantía, y pagar solo por trabajo verificado contra registros oficiales.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Open the marketplace</span><span lang="es">Abrir el marketplace</span></a>
+      <a class="btn btn-ghost" href="/docs/index.html"><span lang="en">Read the docs</span><span lang="es">Leer la documentación</span></a>
+    </div>
+
+    <div class="chips">
+      <a class="chip" href="#offers" lang="en">Company formation</a><a class="chip" href="#offers" lang="es">Constitución de sociedades</a>
+      <a class="chip" href="#offers" lang="en">Land due diligence</a><a class="chip" href="#offers" lang="es">Due diligence de terrenos</a>
+      <a class="chip" href="#offers" lang="en">Municipal permits</a><a class="chip" href="#offers" lang="es">Permisos municipales</a>
+      <a class="chip" href="#offers" lang="en">Tax registration</a><a class="chip" href="#offers" lang="es">Inscripción tributaria</a>
+      <a class="chip" href="#offers" lang="en">Notary services</a><a class="chip" href="#offers" lang="es">Servicios notariales</a>
+      <a class="chip" href="#offers" lang="en">Accounting &amp; payroll</a><a class="chip" href="#offers" lang="es">Contabilidad y planillas</a>
+      <a class="chip" href="#offers" lang="en">Hotel licensing</a><a class="chip" href="#offers" lang="es">Licencias hoteleras</a>
+      <a class="chip" href="#offers" lang="en">Real-estate closings</a><a class="chip" href="#offers" lang="es">Cierres inmobiliarios</a>
+      <a class="chip" href="#offers" lang="en">Eco-tourism operations</a><a class="chip" href="#offers" lang="es">Operación ecoturística</a>
+      <a class="chip" href="#offers" lang="en">Cross-border structures</a><a class="chip" href="#offers" lang="es">Estructuras internacionales</a>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><span class="n">$5,000</span><span class="l" lang="en">first verified agent purchase</span><span class="l" lang="es">primera compra verificada de un agente</span></div>
+      <div class="stat"><span class="n">4/4</span><span class="l" lang="en">registry proofs independently verified</span><span class="l" lang="es">pruebas de registro verificadas de forma independiente</span></div>
+      <div class="stat"><span class="n">8/8</span><span class="l" lang="en">independent audit checks passed</span><span class="l" lang="es">verificaciones de auditoría independiente aprobadas</span></div>
+      <div class="stat"><span class="n">12</span><span class="l" lang="en">MCP tools for any agent</span><span class="l" lang="es">herramientas MCP para cualquier agente</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LIVE OFFERS ═══════════ -->
+<section class="section" id="offers">
+  <div class="wrap">
+    <p class="eyebrow" lang="en">Live from the marketplace</p>
+    <p class="eyebrow" lang="es">Directo del marketplace</p>
+    <h2 lang="en">Real services. Real terms. Skin in the game.</h2>
+    <h2 lang="es">Servicios reales. Términos reales. Piel en el juego.</h2>
+    <p class="lede" lang="en">Every offer states its price, its escrow split, and — most importantly — how much collateral the provider has at risk. This is the demo marketplace, seeded with fictional Costa Rican firms.</p>
+    <p class="lede" lang="es">Cada oferta declara su precio, su esquema de custodia y — lo más importante — cuánto colateral arriesga el proveedor. Este es el marketplace del demo, con firmas costarricenses ficticias.</p>
+
+    <div class="grid-3" style="margin-top: 40px;">
+      <div class="card card-accent offer">
+        <div class="meta"><span>Legal · Costa Rica</span></div>
+        <span class="price">$5,000</span>
+        <span class="title" lang="en">Costa Rican company formation for land &amp; hotel operation</span>
+        <span class="title" lang="es">Constitución de sociedad costarricense para terreno y hotel</span>
+        <p lang="en">Bufete Herrera &amp; Asociados · 4 steps, each proven in an official registry · 20% down, 80% on completion.</p>
+        <p lang="es">Bufete Herrera &amp; Asociados · 4 pasos, cada uno probado en un registro oficial · 20% anticipo, 80% contra entrega.</p>
+        <div class="foot"><span class="pill pill-stake" lang="en">$1,500 staked</span><span class="pill pill-stake" lang="es">$1,500 en garantía</span><span class="pill pill-gold" lang="en">Registry-proven</span><span class="pill pill-gold" lang="es">Prueba registral</span></div>
+      </div>
+      <div class="card offer">
+        <div class="meta"><span lang="en">Real estate · Costa Rica</span><span lang="es">Inmobiliario · Costa Rica</span></div>
+        <span class="price">$2,000</span>
+        <span class="title" lang="en">Beachfront land scouting report (Guanacaste)</span>
+        <span class="title" lang="es">Informe de terrenos frente al mar (Guanacaste)</span>
+        <p lang="en">Pura Vida Realty · vetted parcels with pricing and title status · 25% down.</p>
+        <p lang="es">Pura Vida Realty · parcelas evaluadas con precios y estado de título · 25% de anticipo.</p>
+        <div class="foot"><span class="pill pill-stake" lang="en">Staked provider</span><span class="pill pill-stake" lang="es">Proveedor con garantía</span></div>
+      </div>
+      <div class="card offer">
+        <div class="meta"><span lang="en">Accounting · Costa Rica</span><span lang="es">Contabilidad · Costa Rica</span></div>
+        <span class="price">$1,500</span>
+        <span class="title" lang="en">Bookkeeping &amp; tax registration for a new company</span>
+        <span class="title" lang="es">Contabilidad e inscripción tributaria para una sociedad nueva</span>
+        <p lang="en">Sandoval Accounting Group · Hacienda registration + first-month books · 20% down.</p>
+        <p lang="es">Sandoval Accounting Group · inscripción en Hacienda + primer mes de libros · 20% de anticipo.</p>
+        <div class="foot"><span class="pill pill-stake" lang="en">Staked provider</span><span class="pill pill-stake" lang="es">Proveedor con garantía</span></div>
+      </div>
+      <div class="card offer">
+        <div class="meta"><span>Legal · Panamá</span></div>
+        <span class="price">$3,800</span>
+        <span class="title" lang="en">Panama corporation + bank account setup</span>
+        <span class="title" lang="es">Sociedad panameña + apertura de cuenta bancaria</span>
+        <p lang="en">Horizonte Legal Panamá · cross-border structure with corporate account.</p>
+        <p lang="es">Horizonte Legal Panamá · estructura internacional con cuenta corporativa.</p>
+        <div class="foot"><span class="pill pill-stake" lang="en">Staked provider</span><span class="pill pill-stake" lang="es">Proveedor con garantía</span></div>
+      </div>
+      <div class="card offer">
+        <div class="meta"><span lang="en">Tourism · Costa Rica</span><span lang="es">Turismo · Costa Rica</span></div>
+        <span class="price">$1,200</span>
+        <span class="title" lang="en">Design and book a 7-day eco-tour itinerary</span>
+        <span class="title" lang="es">Diseño y reserva de itinerario ecoturístico de 7 días</span>
+        <p lang="en">Tico Adventures Tours · confirmed bookings, guides included · 50% down.</p>
+        <p lang="es">Tico Adventures Tours · reservas confirmadas, guías incluidos · 50% de anticipo.</p>
+        <div class="foot"><span class="pill pill-stake" lang="en">Staked provider</span><span class="pill pill-stake" lang="es">Proveedor con garantía</span></div>
+      </div>
+      <div class="card offer" style="opacity:.75">
+        <div class="meta"><span>Legal · Costa Rica</span></div>
+        <span class="price">$900</span>
+        <span class="title" lang="en">Budget company formation</span>
+        <span class="title" lang="es">Constitución de sociedad económica</span>
+        <p lang="en">Despacho Sin Garantía · cheapest offer on the board — and no agent can hire it: zero collateral staked.</p>
+        <p lang="es">Despacho Sin Garantía · la oferta más barata del tablero — y ningún agente puede contratarla: cero colateral en garantía.</p>
+        <div class="foot"><span class="pill pill-wax" lang="en">Unvetted · blocked</span><span class="pill pill-wax" lang="es">Sin garantía · bloqueado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<section class="section section-paper2" id="how">
+  <div class="wrap">
+    <p class="eyebrow" lang="en">How it works</p>
+    <p class="eyebrow" lang="es">Cómo funciona</p>
+    <h2 lang="en">Five steps. Every one enforced by the platform.</h2>
+    <h2 lang="es">Cinco pasos. Cada uno lo impone la plataforma.</h2>
+    <div class="steps">
+      <div class="step">
+        <h3 lang="en">Discover</h3><h3 lang="es">Descubrir</h3>
+        <p lang="en">The agent searches a machine-readable catalog. Ranking is earned: ratings tied to settled money, never purchased.</p>
+        <p lang="es">El agente busca en un catálogo legible por máquinas. El ranking se gana: calificaciones atadas a dinero liquidado, nunca compradas.</p>
+      </div>
+      <div class="step">
+        <h3 lang="en">Contract &amp; escrow</h3><h3 lang="es">Contratar y custodiar</h3>
+        <p lang="en">Terms and steps lock into an immutable contract. The downpayment moves into escrow neither side can touch.</p>
+        <p lang="es">Los términos y pasos quedan en un contrato inmutable. El anticipo pasa a una custodia que ninguna parte puede tocar.</p>
+      </div>
+      <div class="step">
+        <h3 lang="en">Deliver with proof</h3><h3 lang="es">Entregar con prueba</h3>
+        <p lang="en">The business completes each step with a reference into an official registry — not a screenshot, a public record.</p>
+        <p lang="es">El negocio completa cada paso con una referencia a un registro oficial — no una captura, un documento público.</p>
+      </div>
+      <div class="step">
+        <h3 lang="en">Verify independently</h3><h3 lang="es">Verificar por cuenta propia</h3>
+        <p lang="en">The agent re-checks every reference against the registry itself before releasing a cent.</p>
+        <p lang="es">El agente re-verifica cada referencia contra el propio registro antes de liberar un centavo.</p>
+      </div>
+      <div class="step">
+        <h3 lang="en">Settle &amp; rate</h3><h3 lang="es">Liquidar y calificar</h3>
+        <p lang="en">Escrow releases in one atomic transaction. Disputes go to a neutral arbiter — and the loser's stake is on the line.</p>
+        <p lang="es">La custodia se libera en una transacción atómica. Las disputas van a un árbitro neutral — y el perdedor arriesga su garantía.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ AGENT / MCP ═══════════ -->
+<section class="section section-dark" id="agents">
+  <div class="wrap">
+    <div class="grid-2" style="align-items:center; gap:44px;">
+      <div>
+        <p class="eyebrow" lang="en">Built for agents</p>
+        <p class="eyebrow" lang="es">Hecho para agentes</p>
+        <h2 lang="en">MCP-first. Your agent already knows how to use it.</h2>
+        <h2 lang="es">MCP primero. Tu agente ya sabe usarlo.</h2>
+        <p lang="en">Pacta ships a Model Context Protocol server with 12 tools covering the full lifecycle — search, contract, escrow, verify, pay, rate. In our recorded demo, a Claude agent hired a law firm for <span class="money">$5,000</span>, skipped a cheaper zero-collateral provider, and re-verified all 4 registry proofs before paying.</p>
+        <p lang="es">Pacta incluye un servidor Model Context Protocol con 12 herramientas que cubren todo el ciclo — buscar, contratar, custodiar, verificar, pagar, calificar. En nuestro demo grabado, un agente Claude contrató un bufete por <span class="money">$5,000</span>, descartó a un proveedor más barato sin colateral y re-verificó las 4 pruebas registrales antes de pagar.</p>
+        <div class="cta-row" style="justify-content:flex-start;">
+          <a class="btn btn-gold" href="/docs/mcp.html"><span lang="en">MCP documentation</span><span lang="es">Documentación MCP</span></a>
+        </div>
+      </div>
+      <div>
+<pre><code><span class="c"># run the marketplace</span>
+npm run start:pacta
+
+<span class="c"># point any MCP agent at it</span>
+{ "mcpServers": { "marketplace": {
+    "command": "node", "args": ["mcp/server.js"],
+    "env": { "MARKETPLACE_URL": "<span class="g">http://localhost:3220</span>",
+             "AGENT_ID": "1" } } } }
+
+<span class="c"># or watch a real Claude agent buy end-to-end</span>
+npm run demo:agent:claude</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOR SMBS ═══════════ -->
+<section class="section" id="smbs">
+  <div class="wrap">
+    <p class="eyebrow" lang="en">For businesses</p>
+    <p class="eyebrow" lang="es">Para negocios</p>
+    <h2 lang="en">Your next customer might not be human.</h2>
+    <h2 lang="es">Tu próximo cliente podría no ser humano.</h2>
+    <p class="lede" lang="en">A law firm in San José, a surveyor in Guanacaste, an accountant in Liberia — Pacta puts your services in front of AI agents buying on behalf of clients worldwide, with the payment locked in escrow before you lift a finger.</p>
+    <p class="lede" lang="es">Un bufete en San José, un topógrafo en Guanacaste, una contadora en Liberia — Pacta pone tus servicios frente a agentes de IA que compran para clientes de todo el mundo, con el pago asegurado en custodia antes de que muevas un dedo.</p>
+
+    <div class="grid-4" style="margin-top: 40px;">
+      <div class="card">
+        <h3 lang="en">Stake to enter</h3><h3 lang="es">Deposita para entrar</h3>
+        <p lang="en">Post collateral to become vetted. Your stake is your word, made expensive to break.</p>
+        <p lang="es">Deposita colateral para quedar acreditado. Tu garantía es tu palabra, hecha cara de romper.</p>
+      </div>
+      <div class="card">
+        <h3 lang="en">Paid from escrow</h3><h3 lang="es">Cobra desde custodia</h3>
+        <p lang="en">The buyer funds escrow before work starts. Deliver and verify — the release is atomic.</p>
+        <p lang="es">El comprador fondea la custodia antes de empezar. Entrega y verifica — la liberación es atómica.</p>
+      </div>
+      <div class="card">
+        <h3 lang="en">Reputation compounds</h3><h3 lang="es">La reputación se acumula</h3>
+        <p lang="en">Every settled engagement grows the volume you're trusted to carry. Good work literally raises your limit.</p>
+        <p lang="es">Cada contrato liquidado aumenta el volumen que se te confía. El buen trabajo literalmente sube tu límite.</p>
+      </div>
+      <div class="card">
+        <h3 lang="en">Rules, not favors</h3><h3 lang="es">Reglas, no favores</h3>
+        <p lang="en">Disputes are ruled by a neutral arbiter against locked contract terms — the same for everyone.</p>
+        <p lang="es">Las disputas las resuelve un árbitro neutral contra términos inmutables — igual para todos.</p>
+      </div>
+    </div>
+    <div class="formula">exposure&nbsp;≤&nbsp;5 × stake&nbsp;+&nbsp;50% × proven&nbsp;GMV&nbsp;&nbsp;<span style="color:var(--mist)">// your open volume, sized by what you risk and what you've proven</span></div>
+  </div>
+</section>
+
+<!-- ═══════════ TRUST ═══════════ -->
+<section class="section section-paper2" id="trust">
+  <div class="wrap">
+    <p class="eyebrow" lang="en">Why it's safe</p>
+    <p class="eyebrow" lang="es">Por qué es seguro</p>
+    <h2 lang="en">Trust, manufactured from mechanisms.</h2>
+    <h2 lang="es">Confianza fabricada con mecanismos.</h2>
+    <div class="grid-4" style="margin-top: 40px;">
+      <div class="card card-accent">
+        <h3 lang="en">Escrowed payments</h3><h3 lang="es">Pagos en custodia</h3>
+        <p lang="en">Double-entry, integer-cents ledger with a continuously checked invariant: Σ balances ≡ Σ minted.</p>
+        <p lang="es">Libro contable de doble entrada en centavos enteros con un invariante verificado continuamente: Σ balances ≡ Σ minted.</p>
+      </div>
+      <div class="card card-accent">
+        <h3 lang="en">Collateral-backed providers</h3><h3 lang="es">Proveedores con colateral</h3>
+        <p lang="en">Vetted means staked. Lose a dispute, lose part of the stake. Hit zero, lose access.</p>
+        <p lang="es">Acreditado significa con garantía. Pierde una disputa, pierde parte del depósito. Llega a cero, pierde el acceso.</p>
+      </div>
+      <div class="card card-accent">
+        <h3 lang="en">Registry-verified work</h3><h3 lang="es">Trabajo verificado en registros</h3>
+        <p lang="en">Proof lives in official public registries. The platform checks it; the buyer re-checks it.</p>
+        <p lang="es">La prueba vive en registros públicos oficiales. La plataforma la revisa; el comprador la re-verifica.</p>
+      </div>
+      <div class="card card-accent">
+        <h3 lang="en">Neutral arbitration</h3><h3 lang="es">Arbitraje neutral</h3>
+        <p lang="en">Every dispute resolves by ruling — release, refund, or split — against terms locked at signing.</p>
+        <p lang="es">Cada disputa se resuelve por fallo — liberar, reembolsar o dividir — contra términos fijados al firmar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ PREVIEW ═══════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2 lang="en">Fair questions.</h2>
+    <h2 lang="es">Preguntas justas.</h2>
+    <div class="faq-list">
+      <details class="faq" lang="en">
+        <summary>Is this a real product?</summary>
+        <div class="a"><p>It's a working proof of concept. The demo data (the firms, the money) is fictional; the mechanics — ledger, escrow, staking, slashing, registry verification, the MCP server — are fully implemented and tested (17 API tests, 11 end-to-end tests, an independently audited agent purchase).</p></div>
+      </details>
+      <details class="faq" lang="es">
+        <summary>¿Esto es un producto real?</summary>
+        <div class="a"><p>Es una prueba de concepto funcional. Los datos del demo (las firmas, el dinero) son ficticios; la mecánica — libro contable, custodia, garantías, penalizaciones, verificación registral, el servidor MCP — está completamente implementada y probada (17 tests de API, 11 tests end-to-end, y una compra de agente auditada de forma independiente).</p></div>
+      </details>
+      <details class="faq" lang="en">
+        <summary>What happens if a business cheats?</summary>
+        <div class="a"><p>The buyer rejects, a neutral arbiter rules, and if the ruling goes against the provider, part of its staked collateral is slashed — 20% of the contract price on a full refund, 10% on a split. A provider whose stake hits $0 automatically loses vetted status and disappears from agent searches.</p></div>
+      </details>
+      <details class="faq" lang="es">
+        <summary>¿Qué pasa si un negocio hace trampa?</summary>
+        <div class="a"><p>El comprador rechaza, un árbitro neutral falla, y si el fallo va contra el proveedor, parte de su colateral se penaliza — 20% del precio del contrato si hay reembolso total, 10% si hay división. Un proveedor cuya garantía llega a $0 pierde automáticamente su acreditación y desaparece de las búsquedas de agentes.</p></div>
+      </details>
+      <details class="faq" lang="en">
+        <summary>Can my AI agent really use this on its own?</summary>
+        <div class="a"><p>Yes. Pacta is MCP-first: 12 tools cover the whole lifecycle. In our recorded demo a Claude agent searched, contracted, escrowed, waited for delivery, verified 4 registry references independently, paid $5,000, and rated the provider — with an 8/8 independent audit at the end.</p></div>
+      </details>
+      <details class="faq" lang="es">
+        <summary>¿De verdad mi agente de IA puede usar esto solo?</summary>
+        <div class="a"><p>Sí. Pacta es MCP primero: 12 herramientas cubren todo el ciclo. En nuestro demo grabado, un agente Claude buscó, contrató, fondeó la custodia, esperó la entrega, verificó 4 referencias registrales por su cuenta, pagó $5,000 y calificó al proveedor — con una auditoría independiente de 8/8 al final.</p></div>
+      </details>
+    </div>
+    <p style="text-align:center; margin-top: 26px;">
+      <a class="btn btn-green" href="/docs/faq.html"><span lang="en">All questions, answered</span><span lang="es">Todas las preguntas, respondidas</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ CLOSING ═══════════ -->
+<section class="section section-dark" style="text-align:center;">
+  <div class="wrap">
+    <div class="seal-divider" style="margin-bottom:18px;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color:var(--gold); width:64px; height:64px;">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+      </svg>
+    </div>
+    <h2 lang="en">Pacta sunt servanda.<br>Now it's infrastructure.</h2>
+    <h2 lang="es">Pacta sunt servanda.<br>Ahora es infraestructura.</h2>
+    <div class="cta-row" style="margin-top:32px;">
+      <a class="btn btn-gold" href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Open the marketplace</span><span lang="es">Abrir el marketplace</span></a>
+      <a class="btn btn-ghost" href="/docs/index.html"><span lang="en">Get started</span><span lang="es">Comenzar</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-cols">
+    <div>
+      <a class="brand" href="/index.html">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4.1 3.1"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <text x="50" y="65" text-anchor="middle" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="46" fill="currentColor">P</text>
+        </svg>
+        <span class="brand-word">PACTA</span>
+      </a>
+      <p class="tag" lang="en">Agreements that enforce themselves.</p>
+      <p class="tag" lang="es">Pactos que se cumplen por diseño.</p>
+    </div>
+    <div>
+      <h4 lang="en">Product</h4><h4 lang="es">Producto</h4>
+      <a href="http://localhost:3220" target="_blank" rel="noopener"><span lang="en">Marketplace app</span><span lang="es">App del marketplace</span></a>
+      <a href="#how"><span lang="en">How it works</span><span lang="es">Cómo funciona</span></a>
+      <a href="#offers"><span lang="en">Sample services</span><span lang="es">Servicios de ejemplo</span></a>
+    </div>
+    <div>
+      <h4>Docs</h4>
+      <a href="/docs/index.html"><span lang="en">Getting started</span><span lang="es">Primeros pasos</span></a>
+      <a href="/docs/mcp.html"><span lang="en">MCP integration</span><span lang="es">Integración MCP</span></a>
+      <a href="/docs/faq.html">FAQ</a>
+    </div>
+    <div>
+      <h4 lang="en">Project</h4><h4 lang="es">Proyecto</h4>
+      <a href="#agents"><span lang="en">Agent demo</span><span lang="es">Demo del agente</span></a>
+      <a href="#trust"><span lang="en">Trust mechanics</span><span lang="es">Mecánica de confianza</span></a>
+      <a href="/documents/Pacta-Explainer-EN.pdf" target="_blank" rel="noopener"><span lang="en">Explainer (PDF)</span><span lang="es">Explainer (PDF, EN)</span></a>
+      <a href="/documents/Pacta-Pitch-EN.pdf" target="_blank" rel="noopener"><span lang="en">Pitch (PDF)</span><span lang="es">Pitch (PDF, EN)</span></a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span lang="en">Pacta · proof of concept · demo data is fictional, the mechanics are real · <span class="money">Σ balances ≡ Σ minted</span></span>
+    <span lang="es">Pacta · prueba de concepto · los datos del demo son ficticios, la mecánica es real · <span class="money">Σ balances ≡ Σ minted</span></span>
+  </div>
+</footer>
+
+<script src="/assets/config.js"></script>
+<script src="/assets/site.js"></script>
+</body>
+</html>
