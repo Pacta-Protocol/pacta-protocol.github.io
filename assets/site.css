@@ -488,3 +488,20 @@ table.ref td:first-child { font-family: var(--mono); color: var(--cyan-2); white
   .pipe-step p { display: block; }
   .brand-word .sub { display: none; }
 }
+
+/* ============================================================
+   BUILT ON PACTA (examples)
+   ============================================================ */
+.shot-frame {
+  margin: 56px auto 10px; max-width: 960px;
+  border: 1px solid var(--border-2); border-radius: var(--radius);
+  overflow: hidden; background: var(--bg-2);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+}
+.shot-frame img { display: block; width: 100%; height: auto; }
+.shot-frame figcaption {
+  padding: 14px 20px; font-size: 13px; color: var(--ink-dim);
+  line-height: 1.55; text-align: center; border-top: 1px solid var(--border-2);
+}
+.tier-link { display: inline-block; margin-top: 14px; font-size: 13.5px; font-weight: 650; color: var(--blue-soft); }
+.tier-link:hover { color: var(--ink); }
