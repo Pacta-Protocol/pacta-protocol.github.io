@@ -21,6 +21,7 @@ How trust is manufactured:
 - App: https://app.pactaprotocol.org/
 - Source: https://github.com/Pacta-Protocol
 - Example app (LandBridge, cross-border real estate on the MCP surface): https://github.com/Pacta-Protocol/Pacta.Example.RealEstate
+- Example app (MedVoyage, a Sentient ROMA agent forming a medical-tourism company in Colombia over the same MCP surface): https://github.com/Pacta-Protocol/Pacta.Example.RomaBuyer
 - Contact: hello@pactaprotocol.org
 - Languages: English and Spanish.
 - License: open source under the MIT License.
